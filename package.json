@@ -1,5 +1,5 @@
 {
-    "name": "web-ext-bridge",
+    "name": "ext-web-bridge",
     "version": "1.0.0",
     "description": "Extension and web ipc bridge",
     "keywords": [
@@ -14,11 +14,11 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/woshidamaomao/web-ext-bridge.git"
+        "url": "https://github.com/woshidamaomao/ext-web-bridge.git"
     },
-    "homepage": "https://github.com/woshidamaomao/web-ext-bridge",
+    "homepage": "https://github.com/woshidamaomao/ext-web-bridge",
     "bugs": {
-        "url": "https://github.com/woshidamaomao/web-ext-bridge/issues"
+        "url": "https://github.com/woshidamaomao/ext-web-bridge/issues"
     },
     "type": "module",
     "main": "./dist/cjs/index.js",
