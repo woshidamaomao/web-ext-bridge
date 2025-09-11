@@ -38,7 +38,7 @@
         "LICENSE"
     ],
     "scripts": {
-        "clean": "rm -rf dist",
+        "clean": "node script/clear.js",
         "build:esm": "tsc --project tsconfig.build.json --module ESNext --outDir dist/esm",
         "build:cjs": "tsc --project tsconfig.build.json --module CommonJS --outDir dist/cjs",
         "build": "npm run clean && npm run build:esm && npm run build:cjs",
@@ -55,9 +55,6 @@
         "access": "public"
     },
     "private": false,
-    "dependencies": {
-        "@1password/op-js": "0.1.13"
-    },
     "devDependencies": {
         "@types/node": "^20.0.0",
         "tsx": "^4.0.0",
