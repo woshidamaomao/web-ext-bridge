@@ -1,6 +1,6 @@
 {
     "name": "ext-web-bridge",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Extension and web ipc bridge",
     "keywords": [
         "extension and web ipc bridge",

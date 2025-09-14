@@ -127,7 +127,6 @@ export class WebBridge {
    */
   private async performHandshakeWithRetry(): Promise<void> {
     return new Promise((resolve, reject) => {
-      console.log(`[${this.communicationId}] 开始建联...`);
       const attemptHandshake = async () => {
         try {
           // 发送握手请求
@@ -136,7 +135,6 @@ export class WebBridge {
           // 握手成功
           this.isReady = true;
           this.stopHandshakeRetry();
-          console.log(`[${this.communicationId}] 建联成功，尝试次数: ${this.handshakeAttempts + 1}`);
           resolve();
           
         } catch (error) {
@@ -144,13 +142,10 @@ export class WebBridge {
           
           if (this.handshakeAttempts >= this.options.maxHandshakeAttempts) {
             this.stopHandshakeRetry();
-            console.error(`[${this.communicationId}] 建联失败，已达到最大尝试次数`);
             reject(new Error(`建联失败: ${error}`));
             return;
           }
 
-          console.log(`[${this.communicationId}] 建联尝试 ${this.handshakeAttempts} 失败，${this.options.handshakeRetryInterval}ms 后重试...`);
-          
           // 继续重试
           this.handshakeRetryInterval = setTimeout(attemptHandshake, this.options.handshakeRetryInterval) as unknown as number;
         }
@@ -388,7 +383,6 @@ export class WebBridge {
   private setupHandshakeHandler(): void {
     // 处理握手请求
     this.handle(HANDSHAKE_ACTION, (data) => {
-      console.log(`[${this.communicationId}] 收到握手请求，立即响应`);
       return { success: true, timestamp: Date.now() };
     });
   }
